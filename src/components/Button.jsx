@@ -1,27 +1,29 @@
+import React from 'react';
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const StyledButton = styled.span`
   cursor: pointer;
-  background-color: #f0f0f0;
-  border: none;
-  /* border-radius: 40px; */
-  text-shadow: none;
-  width: 250px;
-  aspect-ratio: 23 / 5;
-  color: #767676;
-  text-transform: uppercase;
-  font-weight: 700;
-  /* transition-duration: .1s; */
-
+  width: 200px;
+  aspect-ratio: 4/1;
+  border-radius: 50px;
+  background-color: #282c34f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s all;
+  
   &:hover {
-    background-color: #5f5f5f;
-    color: #1c1c1c;
+    transform: scale(1.2);
   }
-`;
+  
+`
 
-function Button({children, style,}) {
+function Button(props) {
   return (
-    <StyledButton style={style}>{children}</StyledButton>
-  )
+    <StyledButton>
+      {props.children}
+    </StyledButton>
+  );
 }
-export default Button
+
+export default Button;
